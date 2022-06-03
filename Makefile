@@ -18,10 +18,10 @@ m:
 	GOARCH=amd64 GOOS=darwin go build  --buildmode=c-archive -o $(BINDIR)/starship.a mac/*.go
 	cp mac/callback.h $(BINDIR)/
 a:
-	 gomobile bind -v -o $(BINDIR)/starship.aar -target=android -ldflags=-s github.com/lightStarShip/tdb_go/android
+	 gomobile bind -v -o $(BINDIR)/starship.aar -target=android -ldflags=-s github.com/lightStarShip/tbd_go/android
 i:
 	go env -w GOFLAGS=-mod=mod
-	gomobile bind -v -o $(BINDIR)/starship.xcframework -target=ios  -ldflags="-w" -ldflags=-s github.com/lightStarShip/tdb_go/ios
+	gomobile bind -v -o $(BINDIR)/starship.xcframework -target=ios  -ldflags="-w" -ldflags=-s github.com/lightStarShip/tbd_go/ios
 
 clean:
 	gomobile clean
